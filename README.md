@@ -37,4 +37,4 @@ Play detective and put your machine learning skills to use by building an algori
 ### Part 8: [Data Visualization in Tableau](https://www.udacity.com/course/data-visualization-in-tableau--ud1006)
 Understand the importance of data visualization. Know how different data types are encoded in visualizations. Select the most effective chart or graph based on the data being displayed.
 
-- Project: Create a Tableau Story
+- Project: [Create a Tableau Story](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/8-Data-Visualization-in-Tableau/Create-a-Tableau-Story.ipynb)
