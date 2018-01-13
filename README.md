@@ -12,7 +12,7 @@ Learn to use descriptive statistics to describe properties of datasets and learn
 ### Part 3: [Intro to Data Analysis](https://www.udacity.com/course/intro-to-data-analysis--ud170)
 Choose one of Udacity's curated datasets and investigate it using NumPy and Pandas. Go through the entire data analysis process, starting by posing a question and finishing by sharing your findings.
 
-- Project: Investigate a Dataset
+- Project: [Investigate a Dataset](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/3-Intro-to-Data-Analysis/Investigate-a-Dataset.ipynb)
 
 ### Part 4: [Data Wrangling](https://www.udacity.com/course/data-wrangling-with-mongodb--ud032)
 Choose a region of the world from www.openstreetmap.org and then use data wrangling techniques to audit and clean the data. You'll then use a database to query the cleaned data.
@@ -27,7 +27,7 @@ Use R and apply exploratory data analysis techniques to explore a selected data 
 ### Part 6: [Inferential Statistics](https://www.udacity.com/course/intro-to-inferential-statistics--ud201)
 Use descriptive statistics and a statistical test to analyze the Stroop effect, a classic result of experimental psychology.
 
-- Project: Test a Perceptual Phenomenon
+- Project: [Test a Perceptual Phenomenon](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/6-Inferential-Statistics/Stroop-Effect.ipynb)
 
 ### Part 7: [Intro to Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120)
 Play detective and put your machine learning skills to use by building an algorithm to identify Enron Employees who may have committed fraud based on the public Enron financial and email dataset.
