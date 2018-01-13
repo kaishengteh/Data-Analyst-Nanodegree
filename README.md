@@ -1,10 +1,10 @@
 # Data-Analyst-Nanodegree
 This repository contains projects for Udacity's [Data Analyst Nanodegree](https://www.udacity.com/course/data-analyst-nanodegree--nd002).
 
-### Part 1: Welcome to the Nanodegree
-Get started on your Nanodegree and learn how to make the most of Udacity's resources!
+### Part 1: Analyze Bay Area Bike Share Project
+Complete your first project analyzing bike rental data. It’s a great project to tackle during the first week in your Nanodegree to see if the program is a good fit for you!
 
-You’ll also do your first project analyzing bike rental data. It’s a great project to tackle during the first week in your Nanodegree to see if the program is a good fit for you!
+Project: Analyze Bay Area Bike Share Data
 
 ### Part 2: Descriptive Statistics
 Learn to use descriptive statistics to describe properties of datasets and learn about how samples and populations are related.
