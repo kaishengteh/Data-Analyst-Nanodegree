@@ -1,0 +1,9 @@
+Some of the resources used while completing the projects:
+1. Udacity Lesson 13: Case study: OpenStreetMap Data [SQL]
+https://classroom.udacity.com/nanodegrees/nd002/parts/860b269a-d0b0-4f0c-8f3d-ab08865d43bf/modules/316820862075461/lessons/5436095827/concepts/8063289030923
+
+2. Sample project
+https://gist.github.com/carlward/54ec1c91b62a5f911c42#file-sample_project-md
+
+3. Python documentation
+https://docs.python.org/3/library/sqlite3.html
