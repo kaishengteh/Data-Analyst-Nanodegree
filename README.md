@@ -17,7 +17,7 @@ Choose one of Udacity's curated datasets and investigate it using NumPy and Pand
 ### Part 4: [Data Wrangling](https://www.udacity.com/course/data-wrangling-with-mongodb--ud032)
 Choose a region of the world from www.openstreetmap.org and then use data wrangling techniques to audit and clean the data. You'll then use a database to query the cleaned data.
 
-- Project: Wrangle OpenStreetMap Data
+- Project: [Wrangle OpenStreetMap Data](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Data_Wrangling.ipynb)
 
 ### Part 5: [Exploratory Data Analysis](https://www.udacity.com/course/data-analysis-with-r--ud651)
 Use R and apply exploratory data analysis techniques to explore a selected data set for distributions, outliers, and relationships.
