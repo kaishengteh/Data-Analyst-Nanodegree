@@ -10,11 +10,13 @@
    
    [SQL Schema](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Schema.py) - schema for the 5 cvs files which will be used to create SQL database
    
-   [Preparing for Database - SQL](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Preparing_for-Databases_SQL.py) - Code to convert the database into 5 csv files
+   [Convert to CSV files](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Convert_to_CSV_files.py) - Code to convert the database into 5 csv files
    
    [Audit Zipcode](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Audit_Zipcode.py) - Audit the zipcode to check whether it starts with '94' or '95' or something else
    
-   [Update Zipcode](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Update_Zipcode.py) - Code to update zipcode (if it is 8/9 digits or has state in zipcode, only first 5 digits is kept, else nothingf is changed.) 
+   [Update Zipcode](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Update_Zipcode.py) - Code to update zipcode (if it is 8/9 digits or has state in zipcode, only first 5 digits is kept, else nothing is changed.) 
+   
+   [Convert to SQL Database](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Convert_to_SQL_Database.py) - Code to convert 5 csv files into .db database
       
 3. [Mapzen](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Mapzen_SanJose.txt) - Mapzen contained the metro extract for the city of San Jose but the website has closed down since Feb 1st, 2018
 
