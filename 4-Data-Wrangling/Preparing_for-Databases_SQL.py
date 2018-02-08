@@ -1,18 +1,22 @@
-import xml.etree.cElementTree as ET
-import pprint
-from collections import defaultdict
-import re
-
-import csv
-import codecs
-import cerberus
-import schema
-
 '''
 The code below is mostly derived from Udacity Lession 13: Case study: OpenStreetMap Data [SQL]
 https://classroom.udacity.com/nanodegrees/nd002/parts/860b269a-d0b0-4f0c-8f3d-ab08865d43bf/modules/316820862075461/lessons/5436095827/concepts/54908788190923
 '''
 OSM_PATH = "san-jose_california.osm"
+OSMFILE = "san-jose_california.osm"
+street_type_re = re.compile(r'\b\S+\.?$', re.IGNORECASE)
+
+expected = ["Street", "Avenue", "Boulevard", "Drive", "Court", "Place", "Square", "Lane", "Road", 
+            "Trail", "Parkway", "Commons", "Circle", "Terrace", "Way"]
+
+mapping = { "St": "Street",
+            "St.": "Street",
+            "Rd.": "Road",
+            "Ave": "Avenue",
+            "Blvd": "Boulevard",
+            "Dr": "Drive",
+            "Rd": "Road"
+            }
 
 NODES_PATH = "nodes.csv"
 NODE_TAGS_PATH = "nodes_tags.csv"
@@ -31,7 +35,7 @@ NODE_TAGS_FIELDS = ['id', 'key', 'value', 'type']
 WAY_FIELDS = ['id', 'user', 'uid', 'version', 'changeset', 'timestamp']
 WAY_TAGS_FIELDS = ['id', 'key', 'value', 'type']
 WAY_NODES_FIELDS = ['id', 'node_id', 'position']
-
+    
 def shape_element(element, node_attr_fields=NODE_FIELDS, way_attr_fields=WAY_FIELDS,
                   problem_chars=PROBLEMCHARS, default_tag_type='regular'):
     """Clean and shape node or way XML element to Python dict"""
@@ -41,7 +45,6 @@ def shape_element(element, node_attr_fields=NODE_FIELDS, way_attr_fields=WAY_FIE
     tags = []  # Handle secondary tags the same way for both node and way elements
     p=0
     
-    # YOUR CODE HERE
     if element.tag == 'node':
         for i in NODE_FIELDS:
             node_attribs[i] = element.attrib[i]
@@ -59,11 +62,23 @@ def shape_element(element, node_attr_fields=NODE_FIELDS, way_attr_fields=WAY_FIE
                 node_tags_attribs['key'] = tag.attrib['k'][split_index+2:]
                 node_tags_attribs['value'] = tag.attrib['v']
                 node_tags_attribs['type'] = tag.attrib['k'][:split_index+1]
+                if node_tags_attribs['type'] == "addr" and node_tags_attribs['key'] == "street":
+                    # update street name
+                    node_tags_attribs['value'] = update_name(tag.attrib['v'], mapping) 
+                #elif node_tags_attribs['type'] == "addr" and node_tags_attribs['key'] == "postcode":
+                #    # update post code
+                #    node_tags_attribs['value'] = update_zipcode(tag.attrib['v']) 
             else:
                 node_tags_attribs['id'] = element.attrib['id']
                 node_tags_attribs['key'] = tag.attrib['k']
                 node_tags_attribs['value'] = tag.attrib['v']
                 node_tags_attribs['type'] = 'regular'
+                if node_tags_attribs['type'] == "addr" and node_tags_attribs['key'] == "street":
+                    # update street name
+                    node_tags_attribs['value'] = update_name(tag.attrib['v'], mapping) 
+                #elif node_tags_attribs['type'] == "addr" and node_tags_attribs['key'] == "postcode":
+                #    # update post code
+                #    node_tags_attribs['value'] = update_zipcode(tag.attrib['v']) 
             tags.append(node_tags_attribs)
         return {'node': node_attribs, 'node_tags': tags}
     elif element.tag == 'way':
@@ -90,11 +105,19 @@ def shape_element(element, node_attr_fields=NODE_FIELDS, way_attr_fields=WAY_FIE
                 e['key'] = c.attrib['k'][split_index+2:]
                 e['type'] = c.attrib['k'][:split_index+1]
                 e['value'] = c.attrib['v']
+                if e['type'] == "addr" and e['key'] == "street":
+                    e['value'] = update_name(c.attrib['v'], mapping) 
+                #elif e['type'] == "addr" and e['key'] == "postcode":
+                #    e['value'] = update_zipcode(c.attrib['v'])
             else:
                 e['id'] = id
                 e['key'] = c.attrib['k']
                 e['type'] = 'regular'
                 e['value'] =  c.attrib['v']
+                if e['type'] == "addr" and e['key'] == "street":
+                    e['value'] = update_name(c.attrib['v'], mapping) 
+                #elif e['type'] == "addr" and e['key'] == "postcode":
+                #    e['value'] = update_zipcode(c.attrib['v'])
             tags.append(e)
         
     return {'way': way_attribs, 'way_nodes': way_nodes, 'way_tags': tags}
@@ -145,11 +168,11 @@ class UnicodeDictWriter(csv.DictWriter, object):
 # ================================================== #
 def process_map(file_in, validate):
     """Iteratively process each XML element and write to csv(s)"""
-    with codecs.open(NODES_PATH, 'w') as nodes_file, \
-        codecs.open(NODE_TAGS_PATH, 'w') as nodes_tags_file, \
-        codecs.open(WAYS_PATH, 'w') as ways_file, \
-        codecs.open(WAY_NODES_PATH, 'w') as way_nodes_file, \
-        codecs.open(WAY_TAGS_PATH, 'w') as way_tags_file:
+    with codecs.open(NODES_PATH, 'wb') as nodes_file, \
+        codecs.open(NODE_TAGS_PATH, 'wb') as nodes_tags_file, \
+        codecs.open(WAYS_PATH, 'wb') as ways_file, \
+        codecs.open(WAY_NODES_PATH, 'wb') as way_nodes_file, \
+        codecs.open(WAY_TAGS_PATH, 'wb') as way_tags_file:
 
         nodes_writer = UnicodeDictWriter(nodes_file, NODE_FIELDS)
         node_tags_writer = UnicodeDictWriter(nodes_tags_file, NODE_TAGS_FIELDS)
