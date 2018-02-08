@@ -11,7 +11,11 @@
    [SQL Schema](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Schema.py) - schema for the 5 cvs files which will be used to create SQL database
    
    [Preparing for Database - SQL](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Preparing_for-Databases_SQL.py) - Code to convert the 5 csv files into .db sql database
-
+   
+   [Audit Zipcode](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Audit_Zipcode.py) - Audit the zipcode to check whether it starts with '94' or '95' or something else
+   
+   [Update Zipcode](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Update_Zipcode.py) - Code to update zipcode (if it is 8/9 digits or has state in zipcode, only first 5 digits is kept, else nothingf is changed.) 
+      
 3. [Mapzen](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Mapzen_SanJose.txt) - Mapzen contained the metro extract for the city of San Jose but the website has closed down since Feb 1st, 2018
 
 4. [Sample](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/4-Data-Wrangling/Sample.py) - Code to generate a sample of the dataset
