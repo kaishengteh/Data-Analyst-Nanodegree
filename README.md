@@ -22,7 +22,7 @@ Choose a region of the world from www.openstreetmap.org and then use data wrangl
 ### Part 5: [Exploratory Data Analysis](https://www.udacity.com/course/data-analysis-with-r--ud651)
 Use R and apply exploratory data analysis techniques to explore a selected data set for distributions, outliers, and relationships.
 
-- Project: Explore and Summarize Data
+- Project: [Explore and Summarize Data](https://cdn.rawgit.com/kaishengteh/Data-Analyst-Nanodegree/e94db549/5-Exploratory-Data-Analysis/Exploratory%20Data%20Analysis.html)
 
 ### Part 6: [Inferential Statistics](https://www.udacity.com/course/intro-to-inferential-statistics--ud201)
 Use descriptive statistics and a statistical test to analyze the Stroop effect, a classic result of experimental psychology.
