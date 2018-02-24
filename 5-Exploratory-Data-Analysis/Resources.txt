@@ -1,0 +1,10 @@
+Some of the resources used while completing the projects:
+1. Sample project
+https://s3.amazonaws.com/content.udacity-data.com/courses/ud651/diamondsExample_2016-05.html
+
+2. R documentation
+https://www.rdocumentation.org
+
+3. Forums
+http://www.stackoverflow.com
+http://www.cookbook-r.com/
