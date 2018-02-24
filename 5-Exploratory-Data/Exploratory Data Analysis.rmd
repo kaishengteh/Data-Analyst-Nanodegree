@@ -1,7 +1,6 @@
 Loan Data from Prosper by Kai Sheng TEH
 ========================================================
 
-
 ```{r echo=FALSE, message=FALSE, warning=FALSE, packages}
 # Packages that were used are loaded
 library(ggplot2)
@@ -13,16 +12,9 @@ library(knitr)
 library(ggthemes)
 library(gridExtra)
 library(tidyr)
-#library(car)
 library(GGally)
 library(progress)
 library(scales)
-#library(memisc)
-#library(lattice)
-#library(MASS)
-#library(RColorBrewer)
-#library(RCurl)
-#library(bitops)
 ```
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, Load_the_Data}
@@ -503,17 +495,15 @@ Similarly, lender yield is more likely to be determined by the Prosper's rating 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, MonthlyIncome_LoanAmt_Rating}
 # Relationship between Stated Monthly Income, Loan Amount,
-# Borrower Rate and  Prosper's Rating (Alpha)
+# and  Prosper's Rating (Alpha)
 ggplot(data = subset(prosper, !is.na(ProsperRating..Alpha.)), 
        aes(x = StatedMonthlyIncome, y = LoanOriginalAmount, 
-           color = ProsperRating..Alpha., size = BorrowerRate))+
+           color = ProsperRating..Alpha.))+
   geom_point(alpha = 0.2)+
   xlim(0, quantile(prosper$StatedMonthlyIncome, prob = 0.99, na.rm = TRUE))
 ```
 
 Borrowers with no credit history are allowed to borrow less than $5,000 in general while borrowers with good ratings are allowed to borrow more up to $35,000. 
-
-That being said, lots of borrowers with moderate rating are also allowed to take out loans of more than $25,000 which come with moderate interest rate (0.2) to compensate for the increased risk.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, MonthlyIncome_Ratio_Rating}
 # Relationship between Stated Monthly Income, Debt-to-Income Ratio
