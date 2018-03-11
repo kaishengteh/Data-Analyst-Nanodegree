@@ -32,7 +32,7 @@ Use descriptive statistics and a statistical test to analyze the Stroop effect, 
 ### Part 7: [Intro to Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120)
 Play detective and put your machine learning skills to use by building an algorithm to identify Enron Employees who may have committed fraud based on the public Enron financial and email dataset.
 
-- Project: Identify Fraud from Enron Email
+- Project: [Identify Fraud from Enron Email](https://github.com/kaishengteh/Data-Analyst-Nanodegree/blob/master/7-Intro-to-Machine-Learning/Identify%20Fraud%20from%20Enron%20Email.ipynb)
 
 ### Part 8: [Data Visualization in Tableau](https://www.udacity.com/course/data-visualization-in-tableau--ud1006)
 Understand the importance of data visualization. Know how different data types are encoded in visualizations. Select the most effective chart or graph based on the data being displayed.
